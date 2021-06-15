@@ -52,11 +52,15 @@ Use the higher-order function called getYears to do the following:
 2. Receive a callback function getFinals from task 2 
 3. Return an array called years containing all of the years in the getFinals data set*/
 
-function getYears(/* code here */) {
-    /* code here */
+function getYears(array, callback) {
+    var beta = callback(array);
+    var charlie = [];
+
+    for (var i = 0; i < beta.length; i++){
+        charlie.push(beta[i]["Year"])
+    }
+    return charlie;
 }
-
-
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher-order function getWinners to do the following:  
@@ -65,10 +69,23 @@ Use the higher-order function getWinners to do the following:
 3. Determines the winner (home or away) of each `finals` game. 
 4. Returns the names of all winning countries in an array called `winners` */ 
 
-function getWinners(/* code here */) {
-    /* code here */
-}
+function getWinners(array, callback) {
+    var beta = callback(array);
+    var charlie = [];
+    for (let delta of beta) {
 
+        if (delta ["Home Team Goals"] > delta ["Away Team Goals"]) {
+            charlie.push(delta["Home Team Name"])
+        
+        } else if(delta ["Home Team Goals"] < delta ["Away Team Goals"]) {
+            charlie.push(delta ["Away Team Name"])
+
+        } else {
+            charlie.push(delta ["Home Team Name", "Away Team Name"])
+        }
+    }
+    return charlie
+}
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
