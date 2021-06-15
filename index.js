@@ -7,13 +7,28 @@ Practice accessing data by console.log-ing the following pieces of data note, yo
 
 //(a) Home Team name for 2014 world cup final
 
+const alpha = fifaData.filter(x => x["Year"] == 2014 && x["Stage"] == "Final");
+console.log(alpha[0]["Home Team Name"]);
+
 //(b) Away Team name for 2014 world cup final
+
+console.log(alpha[0]["Away Team Name"]);
 
 //(c) Home Team goals for 2014 world cup final
 
+console.log(alpha[0]["Home Team Goals"]);
+
 //(d) Away Team goals for 2014 world cup final
 
+console.log(alpha[0]["Away Team Goals"]);
+
 //(e) Winner of 2014 world cup final */
+
+if (alpha[0]["Home Team Goals"] > alpha[0]["Away Team Goals"]) {
+    console.log(alpha[0]["Home Team Name"]);
+} else {
+    console.log(alpha[0]["Away Team Name"])
+}
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -24,10 +39,11 @@ Use getFinals to do the following:
 hint - you should be looking at the stage key inside of the objects
 */
 
-function getFinals(/* code here */) {
-   /* code here */
-}
+function getFinals(data) {
+    var results = data.filter(x => x.Stage === "Final");
 
+    return results;
+}
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
